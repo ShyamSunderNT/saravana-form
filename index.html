@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>User Data Form</h1>
+    <form id="userDataForm">
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br></br>
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br></br>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <div style="display: flex; align-items: center;">
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male" style="margin-right: 15px;">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+        </div><br></br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required><br></br>
+
+        <!-- Email Address -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br></br>
+
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea><br></br>
+
+        <label for="pincode">PIN Code:</label>
+        <input type="text" id="pincode" name="pincode" required pattern="\d{6}" title="Please enter a 6-digit PIN code" maxlength="6" oninput="this.value = this.value.replace(/[^0-9]/g, '');"><br><br>
+
+        <!-- Hobbies -->
+        <label>Hobbies:</label>
+        <div style="display: flex; align-items: center;">
+            <input type="checkbox" id="hobby1" name="hobbies" value="Reading">
+            <label for="hobby1" style="margin-right: 15px;">Reading</label>
+            <input type="checkbox" id="hobby2" name="hobbies" value="Traveling">
+            <label for="hobby2" style="margin-right: 15px;">Traveling</label>
+            <input type="checkbox" id="hobby3" name="hobbies" value="Cooking">
+            <label for="hobby3" style="margin-right: 15px;">Cooking</label>
+            <input type="checkbox" id="hobby4" name="hobbies" value="Sports">
+            <label for="hobby4" style="margin-right: 15px;">Sports</label>
+            <input type="checkbox" id="hobby5" name="hobbies" value="Music">
+            <label for="hobby5">Music</label>
+        </div><br></br>
+
+        <!-- Favorite Sports -->
+        <label>Favorite Sport:</label>
+        <div style="display: flex; align-items: center;">
+            <input type="radio" id="sport1" name="favoriteSport" value="Football" required>
+            <label for="sport1" style="margin-right: 15px;">Football</label>
+            <input type="radio" id="sport2" name="favoriteSport" value="Basketball">
+            <label for="sport2" style="margin-right: 15px;">Basketball</label>
+            <input type="radio" id="sport3" name="favoriteSport" value="Tennis">
+            <label for="sport3" style="margin-right: 15px;">Tennis</label>
+            <input type="radio" id="sport4" name="favoriteSport" value="Cricket">
+            <label for="sport4">Cricket</label>
+        </div><br></br>
+        
+        
+
+        <!-- Occupation -->
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" required><br></br>
+
+        <!-- Country of Residence -->
+        <label for="country">Country of Residence:</label>
+        <select id="country" name="country" required>
+            <option value="">Select your country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="UK">UK</option>
+            <option value="Australia">Australia</option>
+        </select><br></br>
+
+        <!-- Education Level -->
+        <label for="education">Education Level:</label>
+        <select id="education" name="education" required>
+            <option value="">Select your education level</option>
+            <option value="High School">High School</option>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Master's">Master's</option>
+            <option value="PhD">PhD</option>
+        </select><br></br>
+
+        <!-- Interests -->
+        <label for="interests">Interests:</label>
+        <textarea id="interests" name="interests" rows="3" placeholder="List your interests"></textarea><br></br>
+
+        <!-- Pet Ownership -->
+        <label>Do you have any pets?</label>
+        <div style="display: flex; align-items: center;">
+            <input type="checkbox" id="petDog" name="pets" value="Dog">
+            <label for="petDog" style="margin-right: 15px;">Dog</label>
+            <input type="checkbox" id="petCat" name="pets" value="Cat">
+            <label for="petCat" style="margin-right: 15px;">Cat</label>
+            <input type="checkbox" id="petNone" name="pets" value="None">
+            <label for="petNone">None</label>
+        </div><br></br>
+
+        <!-- Preferred Contact Method -->
+        <label>Preferred Contact Method:</label>
+        <div style="display: flex; align-items: center;">
+            <input type="radio" id="contactEmail" name="contactMethod" value="Email" required>
+            <label for="contactEmail" style="margin-right: 15px;">Email</label>
+            <input type="radio" id="contactPhone" name="contactMethod" value="Phone">
+            <label for="contactPhone">Phone</label>
+        </div><br></br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="tableContainer">
+        <h2>User Data</h2>
+        <table id="myTable" class="table">
+            <thead>
+                <tr>
+                    <th>Submission Number</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Hobbies</th>
+                    <th>Favorite Sport</th>
+                    <th>Phone</th>
+                    <th>Occupation</th>
+                    <th>Country</th>
+                    <th>Education</th>
+                    <th>Interests</th>
+                    <th>Pets</th>
+                    <th>Preferred Contact Method</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Data rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
